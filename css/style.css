@@ -75,7 +75,7 @@ body {
 
 .enemy:nth-of-type(10) {
     background: url("../imgs/gophers-1.png") no-repeat 0 0;
-    -webkit-animation: enemy_10 10s 1s ease infinite;
+    -webkit-animation: enemy_10 8s 1s ease infinite;
 }
 
 /*调整地鼠的初始位置：在游戏区域之外*/
@@ -410,16 +410,16 @@ body {
 }
 
 @-webkit-keyframes timer {
-    from{
+    from {
         width: 0;
     }
-    to{
+    to {
         width: 183px;
     }
 }
 
 /*分数*/
-.score-board{
+.score-board {
     width: 158px;
     height: 106px;
     position: absolute;
@@ -429,26 +429,42 @@ body {
     background: url("../imgs/gophers-Slice_Scoreboard.png") no-repeat 0 0;
 }
 
-.score-wrap{
-    border: 1px solid red;
+.score-wrap {
+    overflow: hidden;
     width: 112px;
-    height: 64px;
+    height: 63px;
     position: absolute;
     top: 19px;
     left: 24px;
 }
-.scores{
+
+.scores {
+    position: absolute;
+    top: -635px;
+    left: 0;
 }
-.score{
+
+/*地鼠死了，占位方块出现*/
+.score {
     margin: 0;
     width: 112px;
-    height: 64px;
+    height: 63px;
     -webkit-appearance: button;
     -moz-appearance: button;
     display: block;
 }
-.score-pic{
+
+.score-pic {
     width: 112px;
     height: 694px;
     background: url("../imgs/gophers-Slice_Score-2.png") no-repeat 0 0;
+    pointer-events: none; /*不能被点击*/
+    -webkit-pointer-events: none;
+}
+
+/*地鼠活着，不需要占位方块*/
+.score:checked {
+    height: 0;
+    position: absolute;
+    top: 0;
 }
