@@ -452,6 +452,7 @@ body {
     -webkit-appearance: button;
     -moz-appearance: button;
     display: block;
+    -webkit-transition: all 0.3s linear;
 }
 
 .score-pic {
@@ -467,4 +468,27 @@ body {
     height: 0;
     position: absolute;
     top: 0;
+}
+
+/*游戏结束*/
+.gameover {
+    width: 320px;
+    height: 376px;
+    background: url("../imgs/gophers-Slice_Gameover.png") no-repeat 0 0;
+    position: absolute;
+    top: -376px;
+    z-index: 99;
+
+    -webkit-animation: gameover 0.5s linear forwards 10s;
+}
+
+@-webkit-keyframes gameover {
+    from {
+        top: -376px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
